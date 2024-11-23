@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>VUE</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/estilos.css" />
+        
+    </head>
+    <body>
+        <header class="bg-success text-center text-white">
+            <span class="h2">VUE</span>
+         
+        </header>
+
+        <section class="container-fluid text-center my-5" id="contenedor">
+            <div class="row mb-3">
+                <h2 class="col-12 mb-4">Muebles</h2> <!-- Espaciado inferior al título -->
+                
+                <!-- Tarjetas con espaciado -->
+                <div v-for="mueble in muebles" class="card col-12 col-md-6 col-lg-3 mb-4"> 
+                    <img class="card-img-top img-fluid" v-bind:src="mueble.image" alt="Imagen del mueble">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ mueble.name }}</h3>
+                        <p class="card-text">${{ mueble.price }}</p>
+                        <p class="card-text">{{ mueble.company }}</p>
+                        <p class="card-text">{{ mueble.description }}</p>
+              
+                    </div>
+                </div>
+            </div>
+        </section>
+                
+        <footer class="bg-dark text-center text-white">
+            <span class="h2">Muebles</span>
+        </footer>
+
+        <script src="js/vue3.js"></script>
+        <script src="js/axios.min.js"></script>
+        <script src="js/funciones.js"></script>
+    </body>
+</html>
